@@ -10,11 +10,11 @@ You are tasked with analyzing customer data for a subscription-based service pro
 1. **Clone the Repository**:
    - Clone the project repository to your local machine:
      ```bash
-     git clone <repository_url>
+     git clone https://github.com/Kevinjoythomas/craftmyplate-final-assignment
      ```
    - Navigate to the project directory:
      ```bash
-     cd <repository_name>
+     cd craftmyplate-final-assignment
      ```
 
 2. **Python Environment**:
