@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Churn Prediction</title>
+<link rel="stylesheet" href="../static/css/churn.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Churn Prediction</h1>
+    <form id="Churnform" action="/" method="POST">
+        <div class="form-group">
+            <label for="Gender">Gender</label>
+            <select name="Gender" class="form-control">
+                <option value="no">Female</option>
+                <option value="yes">Male</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="number" name="Age" class="form-control" id="Age" placeholder="Enter The Age" required>
+        </div>
+        <div class="form-group">
+            <label for="Tenure">Tenure</label>
+            <input type="number" name="Tenure" class="form-control" id="Tenure" placeholder="Enter The Tenure" required>
+        </div>
+        <div class="form-group">
+            <label for="MonthlyCharges">Monthly Charges</label>
+            <input type="number" name="MonthlyCharges" class="form-control" id="MonthlyCharges" placeholder="Enter The Monthly Charges" required>
+
+        </div>
+        <div class="form-group">
+            <label for="TotalCharges">Total Charges</label>
+            <input type="number" name="TotalCharges" class="form-control" id="TotalCharges" placeholder="Enter The Total Charges" required>
+        </div>
+        <div class="form-group">
+            <label for="ServiceUsage1">ServiceUsage 1</label>
+            <input type="number" name="ServiceUsage1" class="form-control" id="ServiceUsage1" placeholder="Enter The Charges of Service 1" required>
+
+        </div>
+        <div class="form-group">
+            <label for="ServiceUsage2">ServiceUsage 2</label>
+            <input type="number" name="ServiceUsage2" class="form-control" id="ServiceUsage2" placeholder="Enter The Charges of Service 2" required>
+
+        </div>
+        <div class="form-group">
+            <label for="ServiceUsage3">ServiceUsage 3</label>
+            <input type="number" name="ServiceUsage3" class="form-control" id="ServiceUsage3" placeholder="Enter The Charges of Service 3" required>
+
+        </div>
+        <div class="form-group">
+            <label for="Payment">Payment Method</label>
+            <select name="Payment" class="form-control">
+                <option value="Credit">Credit Card</option>
+                <option value="Bank">Bank Transfer</option>
+                <option value="Cash">Cash</option>
+                <option value="PayPal">PayPal</option>
+
+            </select>
+        </div>
+        <p></p>
+        <div class="form-group">
+            <button type="submit" class="btn-submit">Submit</button>
+        </div>
+    </form>
+    
+    <input type="checkbox" class="trigger" id="modalTrigger" {% if data!="100" %} checked {% endif %}>
+    
+    <!-- The Modal -->
+    {% if data!=100 %}
+    <div class="modal">
+      <!-- Modal content -->
+      <div class="modal-content" style="text-align:center">
+        <a href="/"><span class="close">&times;
+            
+        </span>
+    </a>
+    {% if data is number %}
+    <p><strong>Churn Probability: {{ '%.2f' % data }} %</strong></p>
+  {% elif data is string and "out of bounds" in data %}
+    <p><strong>{{ data }}</strong></p>
+  {% else %}
+    <p><strong>{{ data }}</strong></p>
+  {% endif %}
+  
+  
+  
+      </div>
+    </div>
+
+    {% endif %}
+
+
+</body>
+</html>
