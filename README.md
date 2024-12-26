@@ -1,5 +1,4 @@
-# Assignment Title:
-## Predict Customer Churn and Build Insights for Retention
+# Assignment Title: Predict Customer Churn and Build Insights for Retention
 
 ## Scenario:
 You are tasked with analyzing customer data for a subscription-based service provider to identify patterns, predict churn, and propose retention strategies. Additionally, build a recommendation engine to enhance customer engagement.
@@ -66,5 +65,6 @@ You are tasked with analyzing customer data for a subscription-based service pro
 
 
 ## Example Response
-- On successful form submission or API call, the predicted churn probability will be displayed as a percentage.
+- On successful form submission, the predicted churn probability will be displayed as a percentage.
+- ![Success](https://github.com/Kevinjoythomas/craftmyplate-final-assignment/blob/main/static/css/Screenshot%202024-12-26%20182227.png)
 
